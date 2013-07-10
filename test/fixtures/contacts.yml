@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  owner: MyString
+  public_key: MyString
+
+two:
+  owner: MyString
+  public_key: MyString
