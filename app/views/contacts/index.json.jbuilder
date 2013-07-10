@@ -1,4 +1,3 @@
 json.array!(@contacts) do |contact|
-  json.extract! contact, 
-  json.url contact_url(contact, format: :json)
+  json.public_key contact.public_key
 end
