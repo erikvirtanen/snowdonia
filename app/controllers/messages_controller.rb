@@ -4,7 +4,10 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.where(
+      '(sender = ? and recipient = ?) or (recipient = ? and sender = ?)',
+      params[:key1], params[:key2],
+      params[:key1], params[:key2])
   end
 
   # GET /messages/1
@@ -69,6 +72,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params[:message]
+      params[:message].permit(:payload, :sender, :recipient)
     end
 end

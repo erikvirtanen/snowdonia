@@ -1,4 +1,5 @@
 json.array!(@messages) do |message|
-  json.extract! message, 
-  json.url message_url(message, format: :json)
+  json.payload message.payload
+  json.sender message.sender
+  json.recipient message.recipient
 end
